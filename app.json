@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "smart-assistant",
+    "slug": "smart-assistant",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/appicon.jpeg",
+    "scheme": "personalassistant",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/images/ic_launcher_foreground.png",
+        "backgroundImage": "./assets/images/ic_launcher_round.png",
+        "monochromeImage": "./assets/images/ic_launcher_round.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.pa.personalassistant"
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/appicon.jpeg"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/ic_launcher.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "backgroundColor": "#000000"
+          }
+        }
+      ],
+      "@react-native-community/datetimepicker"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "ae4373da-c12d-4027-aa09-537a5905d89b"
+      }
+    }
+  }
+}
