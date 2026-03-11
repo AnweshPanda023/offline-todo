@@ -30,11 +30,8 @@ export default function TabLayout() {
             case "calendar":
               iconName = focused ? "calendar" : "calendar-outline";
               break;
-            case "ai":
-              iconName = focused ? "sparkles" : "sparkles-outline";
-              break;
-            case "analytics":
-              iconName = focused ? "bar-chart" : "bar-chart-outline";
+            case "stopwatch":
+              iconName = focused ? "stopwatch" : "stopwatch-outline";
               break;
           }
 
@@ -53,8 +50,7 @@ export default function TabLayout() {
       <Tabs.Screen name="index" options={{ headerShown: false }} />
       <Tabs.Screen name="tasks" options={{ headerShown: false }} />
       <Tabs.Screen name="calendar" options={{ headerShown: false }} />
-      <Tabs.Screen name="ai" options={{ headerShown: false }} />
-      <Tabs.Screen name="analytics" options={{ headerShown: false }} />
+      <Tabs.Screen name="stopwatch" options={{ headerShown: false }} />
     </Tabs>
   );
 }

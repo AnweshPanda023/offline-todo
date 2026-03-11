@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { router } from "expo-router";
 
-
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
   const [displayName, setDisplayName] = useState("");
   const [username, setUsername] = useState("");
-
 
   const MenuButton = ({
     title,
@@ -36,8 +34,8 @@ export default function ProfileScreen() {
       {/* Profile Section */}
       <View style={styles.profileSection}>
         <View style={styles.profileImage} />
-        <Text style={styles.userName}>Hello {displayName || "User"}</Text>
-        <Text style={styles.userEmail}>Bio</Text>
+        <Text style={styles.userName}>Hello {displayName}</Text>
+        <Text style={styles.userEmail}>Descrption</Text>
       </View>
 
       {/* Menu Buttons */}

@@ -16,13 +16,12 @@ npx expo install @react-native-community/datetimepicker
 npx expo install @react-navigation/native
 npx expo install react-native-screens react-native-safe-area-context
 npm install @react-navigation/bottom-tabs
-npm install firebase  
-npm install @react-native-async-storage/async-storage
-npm install -g firebase-tools
-npm install react-native-toast-message
 
-Build:
-eas build -p android --profile preview
+for sql-lite installation :
+
+- npm install expo-sqlite  
+  Build:
+  eas build -p android --profile preview
 
 If you want to clone :
 Just --> "npm install" (after cloning)

@@ -1,7 +1,7 @@
 import { useTasks } from "@/src/hooks/task";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -25,7 +25,7 @@ export default function DashboardScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { tasks, refreshKey } = useTasks();
-  const [displayName, setDisplayName] = useState("User");
+  const [displayName, setDisplayName] = useState("");
 
   // Calculate task statistics
   const taskStats: TaskStats = useMemo(() => {
