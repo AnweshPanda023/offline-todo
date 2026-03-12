@@ -1,13 +1,12 @@
 {
   "expo": {
     "name": "smart-assistant",
-    "slug": "smart-assistant",
+    "slug": "personal-assistant",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/appicon.jpeg",
     "scheme": "personalassistant",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
@@ -18,12 +17,15 @@
         "backgroundImage": "./assets/images/ic_launcher_round.png",
         "monochromeImage": "./assets/images/ic_launcher_round.png"
       },
-      "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.pa.personalassistant"
+      "package": "com.pa.personalassistant",
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
-      "output": "static",
+      "bundler": "metro",
       "favicon": "./assets/images/appicon.jpeg"
     },
     "plugins": [
@@ -40,7 +42,13 @@
           }
         }
       ],
-      "@react-native-community/datetimepicker"
+      "@react-native-community/datetimepicker",
+      [
+        "expo-sqlite",
+        {
+          "enableFTS": true
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

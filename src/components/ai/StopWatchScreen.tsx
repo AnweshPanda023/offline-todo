@@ -1,7 +1,6 @@
 import { useTasks } from "@/src/hooks/task";
 import { Task } from "@/src/models/TasksModel";
 import { Ionicons } from "@expo/vector-icons";
-import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useCallback, useEffect, useState } from "react";
 import {
@@ -13,27 +12,18 @@ import {
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+
 export default function StopwatchScreen() {
   const insets = useSafeAreaInsets();
   const { tasks, refreshKey, toggleTask } = useTasks();
 
-  // Stopwatch states
+  // Stopwatch states - NO RESET on tab switch
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
 
-  // Refresh tasks when screen comes into focus
-  useFocusEffect(
-    useCallback(() => {
-      setSeconds(0);
-      setMinutes(0);
-      setHours(0);
-      setIsRunning(false);
-    }, []),
-  );
-
-  // Stopwatch timer effect
+  // Stopwatch timer effect - runs when isRunning changes
   useEffect(() => {
     let interval: number | null = null;
 
@@ -107,7 +97,12 @@ export default function StopwatchScreen() {
       : 0;
 
   return (
-    <View style={[styles.container, { marginTop: insets.top, marginBottom:insets.bottom }]}>
+    <View
+      style={[
+        styles.container,
+        { marginTop: insets.top, marginBottom: insets.bottom },
+      ]}
+    >
       {/* Background Gradient */}
       <LinearGradient
         colors={["#667eea", "#764ba2", "#f093fb"]}

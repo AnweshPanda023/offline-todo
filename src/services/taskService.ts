@@ -1,5 +1,5 @@
 import { Task } from "@/src/models/TasksModel";
-import { ensureDatabaseInitialized, getDatabase } from "./../Db/Databaseconfig";
+import { ensureDatabaseInitialized, getDatabase } from "../db/Databaseconfig";
 
 const formatDate = (date: Date): string => {
   const year = date.getFullYear();
